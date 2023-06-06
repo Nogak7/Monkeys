@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Monkeys.View.MonkeyView"
+             xmlns:Models="clr-namespace:Monkeys.Models"
+             xmlns:viewModel="clr-namespace:Monkeys.ViewModels"
+             xmlns:views="clr-namespace:Monkeys"
+             x:DataType="viewModel:MonkeyViewModels"
+             
+             >
+    <HorizontalStackLayout BindingContext="{Binding Monkey}">
+        <Button x:Name="btn1" x:DataType="Models:Monkey" Command="{Binding }" >
+            
+        </Button>
+        <Grid>
+            <Image x:Name="img" x:DataType="Models:Monkey" Source="{Binding Image}">
+                
+            </Image>
+
+            <Label x:Name="img" x:DataType="Models:Monkey" Text="{Binding }"> 
+                
+            </Label>
+            
+        </Grid>
+        <Button>
+
+        </Button>
+    </HorizontalStackLayout>
+</ContentView>
