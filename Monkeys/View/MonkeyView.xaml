@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Monkeys.View.MonkeyView"
              xmlns:Models="clr-namespace:Monkeys.Models"
@@ -8,22 +8,42 @@
              x:DataType="viewModel:MonkeyViewModels"
              
              >
-    <HorizontalStackLayout BindingContext="{Binding Monkey}">
-        <Button x:Name="btn1" x:DataType="Models:Monkey" Command="{Binding }" >
-            
-        </Button>
-        <Grid>
-            <Image x:Name="img" x:DataType="Models:Monkey" Source="{Binding Image}">
-                
-            </Image>
-
-            <Label x:Name="img" x:DataType="Models:Monkey" Text="{Binding }"> 
-                
-            </Label>
-            
-        </Grid>
-        <Button>
-
-        </Button>
+    <HorizontalStackLayout >
+        <CarouselView ItemsSource="{Binding Monkeys}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="Models:Monkey">
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                               WidthRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Label Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                                <Image Source="{Binding Image}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Location}"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Details}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </HorizontalStackLayout>
-</ContentView>
+</ContentPage>
