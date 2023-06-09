@@ -17,14 +17,14 @@
                        BorderColor="DarkGray"
                        CornerRadius="5"
                        Margin="20"
-                       HeightRequest="300"
-                        WidthRequest="300"
+                       HeightRequest="520"
+                        WidthRequest="330"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand">
                             <StackLayout>
                                 <Label Text="{Binding Name}"
                                FontAttributes="Bold"
-                               FontSize="18"
+                               FontSize="12"
                                HorizontalOptions="Center"
                                VerticalOptions="Center" />
                                 <Image Source="{Binding Image}"
@@ -37,8 +37,9 @@
                                 <Label Text="{Binding Details}"
                                FontAttributes="Italic"
                                HorizontalOptions="Center"
-                               MaxLines="5"
-                               LineBreakMode="TailTruncation" />
+                               MaxLines="20"
+                              
+                               LineBreakMode="WordWrap" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
